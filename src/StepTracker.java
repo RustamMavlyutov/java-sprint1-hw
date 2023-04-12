@@ -41,7 +41,6 @@ class StepTracker {
     }
     void printStatistic() {
         System.out.println ( "Введите номер месяца от 1 до 12 (включительно)" );
-        // ввод и проверка номера месяца
         int month = scanner.nextInt();
         if ((month < 1) || (month > 12)) {
             System.out.println ( "Ошибка ввода! Месяца с индексом - " + month + " несуществует :(" );
@@ -51,14 +50,15 @@ class StepTracker {
         int sumSteps = monthData.sumStepsFromMonth();// получение суммы шагов за месяц
         int maxSteps = monthData.maxSteps();
         int finalSeries = monthData.bestSeries( goalByStepsPerDay );
+        //Вывод в кансоль
         monthData.printDaysAndStepsFromMonth();// вывод общей статистики по дням
-        System.out.println ( "Всего шагов за месяц: " + sumSteps ); // вывод суммы шагов за месяц
-        System.out.println ( "Максимально пройденно шагов за месяц: " + maxSteps ); // вывод максимального пройденного количества шагов за месяц
-        System.out.println ( "Пройденного среднее количество шагов за месяц: " + (sumSteps / 30) ); // вывод среднего пройденного количества шагов за месяц
-        System.out.println ( "Пройденной за месяц: " + converter.convertToKm(sumSteps) + " km" ); // вывод пройденной за месяц дистанции в км
-        System.out.println ( "Сожжённых килокалорий за месяц: " + converter.convertStepsToKilocalories(sumSteps) + " ккал" ); // вывод количества сожжённых килокалорий за месяц
-        System.out.println ( "вывод лучшей серии" + finalSeries ); // вывод лучшей серии
-        System.out.println(); //дополнительный перенос строки
+        System.out.println ( "Всего шагов за месяц: " + sumSteps );
+        System.out.println ( "Максимально пройденно шагов за месяц: " + maxSteps );
+        System.out.println ( "Пройденного среднее количество шагов за месяц: " + (sumSteps / 30) );
+        System.out.println ( "Пройденной за месяц: " + converter.convertToKm(sumSteps) + " km" );
+        System.out.println ( "Сожжённых килокалорий за месяц: " + converter.convertStepsToKilocalories(sumSteps) + " ккал" );
+        System.out.println ( "вывод лучшей серии" + finalSeries );
+        System.out.println ();
     }
     //метод который будет менять это цель шагов на день вводимое пользователем.
     void changeStepGoal() {

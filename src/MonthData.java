@@ -4,41 +4,41 @@ class MonthData {
     int[] getDays() {
         return days;
     }
-
+    // Вывод элементов массива в необходимом формате
     void printDaysAndStepsFromMonth() {
         for (int i = 0; i < days.length; i++) {
-            // Вывод элементов массива в необходимом формате
             System.out.println((i + 1) + " день: " + days[i]);
         }
     }
 
+    // подсчёт суммы элементов массива days[]
     int sumStepsFromMonth() {
         int sumSteps = 0;
         for (int i = 0; i < days.length; i++) {
-            // подсчёт суммы элементов массива days[]
             sumSteps += days[i];
         }
         return sumSteps;
     }
 
+    // поиск максимального элемента
     int maxSteps() {
         int maxSteps = 0;
         for (int i = 0; i < days.length; i++) {
-            // поиск максимального элемента
             if (maxSteps < days[i])
                 maxSteps = days[i];
         }
         return maxSteps;
     }
 
+    // поиск максимальной серии
     int bestSeries(int goalByStepsPerDay) {
         int currentSeries = 0;
-        currentSeries = goalByStepsPerDay;
         int finalSeries = 0;
         for (int i = 0; i < days.length; i++) {
-            // поиск максимальной серии1
-            if (days[i] > currentSeries) {
-                finalSeries = days[i];
+            if (days[i] > goalByStepsPerDay) {
+                if(++currentSeries > finalSeries) {
+                    finalSeries = currentSeries;
+                }
             }
         }
         return finalSeries;
