@@ -57,7 +57,7 @@ class StepTracker {
         System.out.println ( "Пройденного среднее количество шагов за месяц: " + (sumSteps / 30) );
         System.out.println ( "Пройденной за месяц: " + converter.convertToKm(sumSteps) + " km" );
         System.out.println ( "Сожжённых килокалорий за месяц: " + converter.convertStepsToKilocalories(sumSteps) + " ккал" );
-        System.out.println ( "вывод лучшей серии" + finalSeries );
+        System.out.println ( "вывод лучшей серии: " + finalSeries );
         System.out.println ();
     }
     //метод который будет менять это цель шагов на день вводимое пользователем.
